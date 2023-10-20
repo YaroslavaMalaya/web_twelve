@@ -1,0 +1,10 @@
+.container {
+    flex: 1;
+    padding: 20px;
+    border-left: 1px solid #ccc;
+}
+
+h3 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}

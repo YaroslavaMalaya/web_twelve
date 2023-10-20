@@ -1,0 +1,9 @@
+.mb-2 {
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 10px;
+}
+
+button.btn {
+    margin-top: 5px;
+}

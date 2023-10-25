@@ -1,6 +1,7 @@
-.container {
+.containerDE {
     flex: 1;
-    padding: 20px;
+    margin-left: 20px;
+    padding-left: 30px;
     border-left: 1px solid #ccc;
 }
 

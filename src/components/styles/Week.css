@@ -2,16 +2,23 @@
     display: flex;
     flex-direction: column;
     align-items: center; 
+    margin-top: 20px;
 }
   
 .daysContainer {
     display: flex;
     flex-direction: column;
-    width: 100%; 
+    width: 50%; 
 }
 
 .daysContainer > div {
     margin-bottom: 20px; 
-    height: 100px;
+    height: 10%;
 }
   
+.container2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}

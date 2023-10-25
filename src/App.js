@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="appContainer">
       <Week></Week>
-      <DayExpanded></DayExpanded>
+      {/* <DayExpanded></DayExpanded> */}
     </div>
   );
 }

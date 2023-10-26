@@ -3,13 +3,12 @@ import NewTaskForm from './NewTaskForm';
 import './styles/DayExpanded.css';
 import Task from './Task';
 
-function DayExpanded({ tasks = [], removeTask }) {
-
+function DayExpanded({ selectedDay, tasks = [], removeTask }) {
   return (
     <div className="containerDE">
       <h3>Day in Details</h3>
       {tasks.map((task, index) => (
-        <Task key={index} task={task} removeTask={() => removeTask(task)} />
+          <Task key={index} task={task} removeTask={() => removeTask(selectedDay, task)} />
       ))}
       <NewTaskForm></NewTaskForm>
     </div>

@@ -25,9 +25,9 @@ function Week() {
 
   const removeTask = (day, taskToRemove) => {
     const updatedTasks = { ...tasks };
-    updatedTasks[day] = updatedTasks[day].filter(task => task !== taskToRemove);
+    updatedTasks[day] = updatedTasks[day].filter(task => task.title !== taskToRemove.title);
     setTasks(updatedTasks);
-  };
+};
 
   return (
     <div className="container">
@@ -38,7 +38,7 @@ function Week() {
             <Day  key={index} day={day} handleDayClick={handleDayClick} selectedDay={selectedDay} tasks={tasks[day]}/>
           ))}
         </div>
-        <DayExpanded tasks={tasks[selectedDay]} removeTask={(task) => removeTask(selectedDay, task)}/>
+        <DayExpanded tasks={tasks[selectedDay]} selectedDay={selectedDay} removeTask={removeTask}/>
       </div>
     </div>
   );

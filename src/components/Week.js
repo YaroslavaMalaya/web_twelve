@@ -2,33 +2,29 @@ import React, { useState } from 'react';
 import Day from './Day';
 import './styles/Week.css';
 import DayExpanded from './DayExpanded';
+import { days, initialTasks } from './mockData.js';
 
 function Week() {
-  const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-
   const [selectedDay, setSelectedDay] = useState(null);
 
   const handleDayClick = (day) => {
     setSelectedDay(day);
   };
 
-  const [tasks, setTasks] = useState({
-    Monday: [{ title: "Task 1", description: "Description 1", startTime: "10:00",  duration: 60 },
-            { title: "Task 2", description: "Description 2", startTime: "11:30",  duration: 30 }],
-    Tuesday: [],
-    Wednesday: [],
-    Thursday: [],
-    Friday: [],
-    Saturday: [], 
-    Sunday: [],
-  });
+  const [tasks, setTasks] = useState(initialTasks);
 
   const removeTask = (day, taskToRemove) => {
     const updatedTasks = { ...tasks };
     updatedTasks[day] = updatedTasks[day].filter(task => task.title !== taskToRemove.title);
     setTasks(updatedTasks);
-};
+  };
 
+  const addTask = (day, newTask) => {
+    const updatedTasks = { ...tasks };
+    updatedTasks[day].push(newTask);
+    setTasks(updatedTasks);
+  };
+  
   return (
     <div className="container">
       <h3>WEEEKLY PLANNER</h3>
@@ -38,7 +34,7 @@ function Week() {
             <Day  key={index} day={day} handleDayClick={handleDayClick} selectedDay={selectedDay} tasks={tasks[day]}/>
           ))}
         </div>
-        <DayExpanded tasks={tasks[selectedDay]} selectedDay={selectedDay} removeTask={removeTask}/>
+        {selectedDay && <DayExpanded tasks={tasks[selectedDay]} selectedDay={selectedDay} removeTask={removeTask} addTask={addTask}/>}
       </div>
     </div>
   );

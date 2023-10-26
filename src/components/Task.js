@@ -14,7 +14,7 @@ function Task({ task, removeTask }) {
 
   return (
     <div className="mb-2">
-      <span>{task.title}</span><br/>
+      <h5>{task.title}</h5>
       {task.description}<br/>
       {task.startTime} - {addDurationToStartTime(task.startTime, task.duration)}
       <Button text={"Remove"} onClick={removeTask}></Button>
